@@ -1,5 +1,5 @@
-const http = require('http');
-const fs = require('fs');
+var http = require('http');
+var fs = require('fs');
 
 const hostname = '127.0.0.1';
 const port = 8080;
@@ -14,6 +14,6 @@ fs.readFile('./index.html', function (err, html) {
     }).listen(PORT);
 });
 
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+// server.listen(port, hostname, () => {
+//     console.log(`Server running at http://${hostname}:${port}/`);
+// });
