@@ -14,11 +14,24 @@ fs.readFile('./index.html', function (err, html) {
     }).listen(PORT);
 });
 
-const getAllBuckets = async () => {
-    var response = await fetch('http://35.172.135.0/getAllItems')
-    document.getElementById('title').innerHTML = response
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+function getAllBuckets(){
+    document.getElementById('title').innerHTML = httpGet('http://35.172.135.0/getAllItems')
     console.log('Clicked button!')
 }
+
+// const getAllBuckets = async () => {
+//     var response = await fetch('http://35.172.135.0/getAllItems')
+//     document.getElementById('title').innerHTML = response
+//     console.log('Clicked button!')
+// }
 
 // server.listen(port, hostname, () => {
 //     console.log(`Server running at http://${hostname}:${port}/`);
