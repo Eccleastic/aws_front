@@ -14,6 +14,11 @@ fs.readFile('./index.html', function (err, html) {
     }).listen(PORT);
 });
 
+const getAllBuckets = async () => {
+    var response = await fetch('http://35.172.135.0/getAllItems');
+    document.getElementById('title').innerHTML = response;
+}
+
 // server.listen(port, hostname, () => {
 //     console.log(`Server running at http://${hostname}:${port}/`);
 // });
