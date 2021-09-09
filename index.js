@@ -15,8 +15,9 @@ fs.readFile('./index.html', function (err, html) {
 });
 
 const getAllBuckets = async () => {
-    var response = await fetch('http://35.172.135.0/getAllItems');
-    document.getElementById('title').innerHTML = response;
+    var response = await fetch('http://35.172.135.0/getAllItems')
+    document.getElementById('title').innerHTML = response
+    console.log('Clicked button!')
 }
 
 // server.listen(port, hostname, () => {
